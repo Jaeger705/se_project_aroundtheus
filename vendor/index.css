@@ -78,20 +78,27 @@
 
 .cards{
     /* fonts */
+    margin-top: 40px;
 }
 
 .card__list{
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, 282px);
-    grid-gap: 17px 20px;
+    grid-gap: 20px 17px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+   
+
 }
 
 .card{
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    list-style: none;
+    
+    
 }
 
 .card__image{
@@ -115,4 +122,30 @@
     background: transparent url(../images/Vector\ \(1\).svg) center no-repeat;
     width: 21px;
     height: 18px;
+}
+
+@media screen and (max-width:480px){
+    .profile{
+        
+        flex-direction: column;
+        
+    }
+
+    .profile__info{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        
+    }
+
+    .profile__description{
+        width: 100%;
+        text-align: center;
+    }
+
+    .profile__add-button{
+        margin: 0;
+        width: 100%;
+    }
 }
