@@ -1,9 +1,9 @@
-.cards{
+.nature{
     
     margin-top: 40px;
 }
 
-.card__list{
+.nature__list{
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, 282px);
@@ -15,7 +15,7 @@
 
 }
 
-.card{
+.nature__card{
     display: flex;
     flex-direction: column;
     border-radius: 10px;
@@ -23,12 +23,12 @@
     
 }
 
-.card__image{
+.nature__image{
     width: 282px;
     height: 282px;
 }
 
-.card__description{
+.nature__description{
     display: flex;
     background-color: white;
     color: black;
@@ -44,7 +44,7 @@
    
 }
 
-.card__title{
+.nature__title{
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -54,7 +54,7 @@
     font-weight: 900;   
 }
 
-.card__like-button{
+.nature__like-button{
     background: transparent url(../images/Vector\ \(1\).svg) center no-repeat;
     width: 21px;
     height: 18px;
@@ -65,6 +65,6 @@
     
 }
 
-.card__like-button:hover{
+.nature__like-button:hover{
     opacity: 60%;
 }
