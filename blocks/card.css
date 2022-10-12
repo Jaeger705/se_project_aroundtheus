@@ -50,7 +50,8 @@
     overflow: hidden;
     font-family: "Inter", "Arial", sans-serif;
     line-height: 1.2;
-    font-size: 24px;   
+    font-size: 24px;
+    font-weight: 900;   
 }
 
 .card__like-button{
