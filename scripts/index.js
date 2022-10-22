@@ -17,7 +17,7 @@ const initialCards = [
    },
    {
     name: 'Vanoise National Park',
-    Link: '../images/vanoise-national-park.png'
+    link: '../images/vanoise-national-park.png'
    },
    {
     name: 'Lago Di Braies',
@@ -25,7 +25,7 @@ const initialCards = [
    }
 ];
 
-console.log(initialCards);
+
 
 
 
