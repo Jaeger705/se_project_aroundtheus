@@ -5,8 +5,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border: 0;
+    z-index: 1;
+    display: none;
    
 
+}
+
+.modal_opened{
+    display: flex;
 }
 
 .modal__container{
