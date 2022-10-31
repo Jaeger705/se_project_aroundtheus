@@ -92,4 +92,4 @@ function renderCard(data) {
    cardListEl.prepend(cardEl);
 }
 
-initialCards.forEach(renderCard);
+initialCards.reverse().forEach(renderCard);
