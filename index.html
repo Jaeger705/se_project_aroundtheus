@@ -36,72 +36,7 @@
         </section>
         <section class="nature page__section">
           <ul class="nature__list">
-            <li class="nature__card">
-              <img
-                src="./images/yosemite-valley.png"
-                alt="Picture of Yosemite Valley"
-                class="nature__image"
-              >
-              <div class="nature__description">
-                <h2 class="nature__title">Yosemite Valley</h2>
-                <button class="nature__like-button" type="button"></button>
-              </div>
-            </li>
-            <li class="nature__card">
-              <img
-                src="./images/lake-louise.png"
-                alt="Picture of Lake Louise"
-                class="nature__image"
-              >
-              <div class="nature__description">
-                <h2 class="nature__title">Lake Louise</h2>
-                <button class="nature__like-button" type="button"></button>
-              </div>
-            </li>
-            <li class="nature__card">
-              <img
-                src="./images/bald-mountains.png"
-                alt="Picture of Bald Montains"
-                class="nature__image"
-              >
-              <div class="nature__description">
-                <h2 class="nature__title">Bald Mountains</h2>
-                <button class="nature__like-button" type="button"></button>
-              </div>
-            </li>
-            <li class="nature__card">
-              <img
-                src="./images/latemar.png"
-                alt="Picture of Latemar"
-                class="nature__image"
-              >
-              <div class="nature__description">
-                <h2 class="nature__title">Latemar</h2>
-                <button class="nature__like-button" type="button"></button>
-              </div>
-            </li>
-            <li class="nature__card">
-              <img
-                src="./images/vanoise-national-park.png"
-                alt="Picture of Vanoise National Park"
-                class="nature__image"
-              >
-              <div class="nature__description">
-                <h2 class="nature__title">Vanoise National Park</h2>
-                <button class="nature__like-button" type="button"></button>
-              </div>
-            </li>
-            <li class="nature__card">
-              <img
-                src="./images/lago-di-braies.png"
-                alt="Picture of Lago Di Braies"
-                class="nature__image"
-              >
-              <div class="nature__description">
-                <h2 class="nature__title">Lago di Braies</h2>
-                <button class="nature__like-button" type="button"></button>
-              </div>
-            </li>
+            
           </ul>
         </section>
       </main>
@@ -113,7 +48,7 @@
       <button class="modal__close-button"></button>
       <div class="modal__container">
         <h3 class="modal__title">Edit profile</h3>
-        <form class="modal__form form">
+        <form class="modal__form form" id="edit-profile-form">
             <input class="form__input form__input-name" name="title" placeholder="Name" type="text">
             <div class="form__line"></div>
             <input class="form__input form__input-description" name="description" placeholder="Description" type="text">
@@ -124,6 +59,19 @@
       </div>
 
     </div>
+    <template id="card-template">
+      <li class="nature__card">
+        <img
+          src=""
+          alt=""
+          class="nature__image"
+        >
+        <div class="nature__description">
+          <h2 class="nature__title"></h2>
+          <button class="nature__like-button" type="button"></button>
+        </div>
+      </li> 
+    </template>
 
     <script src="./scripts/index.js"></script>
   </body>
