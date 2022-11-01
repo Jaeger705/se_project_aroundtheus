@@ -49,7 +49,7 @@
     opacity: 80%;
 }
 
-@media screen and (max-width:480px){
+@media screen and (max-width:880px){
     .form{
         margin-left: 0;
         margin-right: 0;

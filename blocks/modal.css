@@ -11,15 +11,20 @@
     right: 0;
     border: 0;
     z-index: 1;
-    display: none;
     flex-direction: column;
-    
+    visibility: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: visibility 0s 0.5s, opacity 0.5s linear;
    
 
 }
 
 .modal_opened{
-    display: flex;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+    transition: visibility 0s, opacity 0.5s linear;
 }
 
 .modal__container{
@@ -54,10 +59,11 @@
 }
 
 
-@media screen and (max-width:480px){
+@media screen and (max-width:880px){
     .modal__container{
         max-width: 282px;
         max-height: 322px;
+        margin-right: 15px;
     }
 
     .modal__title{
