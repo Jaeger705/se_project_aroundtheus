@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    
+    position: relative;
     
 }
 
@@ -69,4 +69,14 @@
 
 .nature__like-button:hover{
     opacity: 50%;
+}
+
+.nature__delete-button{
+    background: transparent url(../images/Trash.svg) no-repeat;
+    width: 18px;
+    height: 19px;
+    border-style: none;
+    position: absolute;
+    left: 85%;
+    top: 5%;
 }

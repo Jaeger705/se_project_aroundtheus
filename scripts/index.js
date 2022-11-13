@@ -35,6 +35,12 @@ const profileTitle = document.querySelector('.profile__title');
 const profileDescription = document.querySelector('.profile__description');
 const cardListEl = document.querySelector('.nature__list');
 const profileEditForm = document.querySelector('#edit-profile-form');
+const cardEdit = document.querySelector('.modal__card');
+const cardAddButton = document.querySelector('.profile__add-button')
+const cardCloseButton = document.querySelector('#add__close-button')
+const cardAddForm = document.querySelector('#add-form')
+
+
 
 
 
@@ -45,6 +51,22 @@ function openModal() {
 function closeModal() {
    profileEdit.classList.remove('modal_opened');
 }
+
+function openCardModal() {
+   cardEdit.classList.add('modal__card-open');
+}
+
+function closeCardModal() {
+   cardEdit.classList.remove('modal__card-open')
+}
+
+cardAddButton.addEventListener('click', (evt) => {
+      openCardModal();
+   })
+
+cardCloseButton.addEventListener('click', (evt) => {
+   closeCardModal()
+})
 
 const cardTemplate = document.querySelector('#card-template').content.firstElementChild;
 
@@ -68,7 +90,20 @@ profileEditForm.addEventListener('submit', (event) => {
    profileDescription.textContent = descriptionValue;
 
    closeModal();
-})
+});
+
+cardAddForm.addEventListener('submit', (evt) => {
+   evt.preventDefault();
+   const title = evt.target.title.value;
+   const link = evt.target.link.value;
+   renderCard({
+      name: title,
+      link: link
+   });
+   closeCardModal(cardAddForm);
+});
+
+
 
 
 
@@ -76,6 +111,7 @@ profileEditForm.addEventListener('submit', (event) => {
 
 
 function createCard(data) {
+   console.log(data)
    const cardEl = cardTemplate.cloneNode(true);
    const imageEl = cardEl.querySelector('.nature__image');
    const cardTitle = cardEl.querySelector('.nature__title');
@@ -93,3 +129,4 @@ function renderCard(data) {
 }
 
 initialCards.reverse().forEach(renderCard);
+

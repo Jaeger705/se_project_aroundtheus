@@ -59,6 +59,21 @@
       </div>
 
     </div>
+    <div class="modal__card">
+      <button class="modal__close-button" id="add__close-button"></button>
+      <div class="modal__container">
+        <h3 class="modal__title">Newplace</h3>
+        <form class="modal__form form" id="add-form">
+            <input class="form__input form__input-title" name="title" placeholder="Title" type="text">
+            <div class="form__line"></div>
+            <input class="form__input form__input-link" name="link" placeholder="Image Link" type="text">
+            <div class="form__line"></div>
+            <button class="form__button" type="submit">Save</button>
+        </form>
+
+      </div>
+
+    </div>
     <template id="card-template">
       <li class="nature__card">
         <img
@@ -66,6 +81,7 @@
           alt=""
           class="nature__image"
         >
+        <button type="button" class="nature__delete-button"></button>
         <div class="nature__description">
           <h2 class="nature__title"></h2>
           <button class="nature__like-button" type="button"></button>
