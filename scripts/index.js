@@ -103,8 +103,15 @@ cardAddForm.addEventListener('submit', (evt) => {
    closeCardModal(cardAddForm);
 });
 
+const cardDeleteButton = cardTemplate.querySelector('.nature__delete-button')
 
+cardDeleteButton.addEventListener('click', () => {
+   cardRemove()
+})
 
+function cardRemove() {
+   cardEl.remove()
+}
 
 
 

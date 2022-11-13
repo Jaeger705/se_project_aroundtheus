@@ -26,6 +26,7 @@
 .nature__image{
     width: 282px;
     height: 282px;
+    border-radius: 10px;
 }
 
 .nature__description{
@@ -79,4 +80,5 @@
     position: absolute;
     left: 85%;
     top: 5%;
+    cursor: pointer;
 }
