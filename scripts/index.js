@@ -103,15 +103,13 @@ cardAddForm.addEventListener('submit', (evt) => {
    closeCardModal(cardAddForm);
 });
 
-const cardDeleteButton = cardTemplate.querySelector('.nature__delete-button')
 
-cardDeleteButton.addEventListener('click', () => {
-   cardRemove()
-})
 
-function cardRemove() {
-   cardEl.remove()
-}
+
+
+
+
+
 
 
 
@@ -122,10 +120,18 @@ function createCard(data) {
    const cardEl = cardTemplate.cloneNode(true);
    const imageEl = cardEl.querySelector('.nature__image');
    const cardTitle = cardEl.querySelector('.nature__title');
-
+   
    imageEl.src = data.link;
    imageEl.alt = data.name;
    cardTitle.textContent = data.name;
+
+   const cardDeleteButton = cardEl.querySelector('.nature__delete-button')
+   
+   cardDeleteButton.addEventListener('click', (evt) =>{
+      cardEl.remove()
+   }) 
+
+   const cardLikeButton = cardEl.querySelector('.nature__like-button')
 
    return cardEl;
 }

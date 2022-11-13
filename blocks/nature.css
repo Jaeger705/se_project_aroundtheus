@@ -18,15 +18,16 @@
 .nature__card{
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
     position: relative;
+    border-radius: 10px;
     
 }
 
 .nature__image{
     width: 282px;
     height: 282px;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .nature__description{
