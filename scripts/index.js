@@ -115,8 +115,10 @@ const handleLikeButton = (evt) => {
 }
 
 
-
-
+const modalPreview = document.querySelector('#modal-preview')
+const imageCloseButton = document.querySelector('#preview-close-button')
+const modalImage = document.querySelector('.modal__image')
+const imageTitle = document.querySelector('.modal__text')
 
 function createCard(data) {
    console.log(data)
@@ -137,7 +139,11 @@ function createCard(data) {
    const cardLikeButton = cardEl.querySelector('.nature__like-button')
    cardLikeButton.addEventListener('click', handleLikeButton)
 
-   
+   imageEl.addEventListener('click', (evt) => {
+      modalImage.src = data.link;
+      modalImage.alt = data.name;
+      openModal(modalPreview)
+   })
 
    return cardEl;
 }
