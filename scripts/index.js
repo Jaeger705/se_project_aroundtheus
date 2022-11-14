@@ -45,8 +45,8 @@ const cardAddForm = document.querySelector('#add-form')
 
 
 
-function openModal() {
-   profileEdit.classList.add('modal_opened');
+function openModal(modal) {
+   modal.classList.add('modal_opened');
 }
 
 function closeModal() {
@@ -60,6 +60,7 @@ function openCardModal() {
 function closeCardModal() {
    cardEdit.classList.remove('modal__card-open')
 }
+
 
 cardAddButton.addEventListener('click', (evt) => {
       openCardModal();
@@ -75,7 +76,7 @@ editButton.addEventListener('click', (evt) => {
    profileNameInput.value = profileTitle.textContent;
    profileDescriptionInput.value = profileDescription.textContent;
 
-   openModal();
+   openModal(profileEdit);
 });
 
 closeProfileModalButton.addEventListener('click', (evt) => {
@@ -135,6 +136,7 @@ function createCard(data) {
    cardDeleteButton.addEventListener('click', (evt) =>{
       cardEl.remove()
    }) 
+  
 
    const cardLikeButton = cardEl.querySelector('.nature__like-button')
    cardLikeButton.addEventListener('click', handleLikeButton)
@@ -143,6 +145,7 @@ function createCard(data) {
       modalImage.src = data.link;
       modalImage.alt = data.name;
       openModal(modalPreview)
+      
    })
 
    return cardEl;

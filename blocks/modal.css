@@ -54,6 +54,33 @@
     transition: visibility 0s, opacity 0.5s linear;
 }
 
+.modal__preview{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border: 0;
+    z-index: 1;
+    flex-direction: column;
+    visibility: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: visibility 0s 0.5s, opacity 0.5s linear;
+}
+
+.modal__preview-open{
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
 .modal__container{
     background-color: white;
     max-width: 430px;
@@ -83,6 +110,10 @@
     font-size: 24px;
     max-width: 200px;
     line-height: 1.2;
+}
+
+#modal-preview{
+
 }
 
 
