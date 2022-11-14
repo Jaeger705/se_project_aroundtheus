@@ -44,6 +44,7 @@ const cardAddForm = document.querySelector('#add-form')
 
 
 
+
 function openModal() {
    profileEdit.classList.add('modal_opened');
 }
@@ -109,7 +110,9 @@ cardAddForm.addEventListener('submit', (evt) => {
 
 
 
-
+const handleLikeButton = (evt) => {
+   evt.target.classList.toggle('nature__like-button_active')
+}
 
 
 
@@ -132,6 +135,9 @@ function createCard(data) {
    }) 
 
    const cardLikeButton = cardEl.querySelector('.nature__like-button')
+   cardLikeButton.addEventListener('click', handleLikeButton)
+
+   
 
    return cardEl;
 }
