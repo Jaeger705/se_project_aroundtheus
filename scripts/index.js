@@ -49,8 +49,8 @@ function openModal(modal) {
    modal.classList.add('modal_opened');
 }
 
-function closeModal() {
-   profileEdit.classList.remove('modal_opened');
+function closeModal(modal) {
+   modal.classList.remove('modal_opened');
 }
 
 function openCardModal() {
@@ -91,7 +91,7 @@ profileEditForm.addEventListener('submit', (event) => {
    profileTitle.textContent = titleValue;
    profileDescription.textContent = descriptionValue;
 
-   closeModal();
+   closeModal(profileEditForm);
 });
 
 cardAddForm.addEventListener('submit', (evt) => {
@@ -145,6 +145,10 @@ function createCard(data) {
       modalImage.src = data.link;
       modalImage.alt = data.name;
       openModal(modalPreview)
+      
+   })
+   imageCloseButton.addEventListener('click', (evt) => {
+      closeModal(modalPreview)
       
    })
 
