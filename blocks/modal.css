@@ -70,7 +70,7 @@
     flex-direction: column;
     visibility: none;
     
-    pointer-events: none;
+   
     transition: visibility 0s 0.5s, opacity 0.5s linear;
 }
 
@@ -112,19 +112,22 @@
     line-height: 1.2;
 }
 
-#modal-preview{
-    
-}
 
 .modal__container-preview{
-    max-width: 430px;
-    max-height: 330px;
+
     border-radius: 10px;
 }
 .modal__image{
     width: 100%;
-    object-fit: contain;
-    
+    object-fit: cover;
+
+    border-radius: 0;
+}
+
+.modal__text{
+    font-family: "Inter", "Arial", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
 }
 
 
