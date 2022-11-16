@@ -49,8 +49,8 @@ function openModal(modal) {
    modal.classList.add('modal_opened');
 }
 
-function closeModal(modal) {
-   modal.classList.remove('modal_opened');
+function closeModal() {
+   profileEdit.classList.remove('modal_opened');
 }
 
 function openCardModal() {
@@ -117,9 +117,15 @@ const handleLikeButton = (evt) => {
 
 
 const modalPreview = document.querySelector('#modal-preview')
-const imageCloseButton = document.querySelector('#preview-close-button')
+
+
 const modalImage = document.querySelector('.modal__image')
 const imageTitle = document.querySelector('.modal__text')
+const imageCloseButton = modalPreview.querySelector('#preview-close-button')
+imageCloseButton.addEventListener('click', (evt) => {
+   //closeModal(modalPreview)
+   console.log('hello')
+})
 
 function createCard(data) {
    console.log(data)
@@ -147,13 +153,20 @@ function createCard(data) {
       openModal(modalPreview)
       
    })
-   imageCloseButton.addEventListener('click', (evt) => {
-      closeModal(modalPreview)
+   /*imageCloseButton.addEventListener('click', (evt) => {
+      //closeModal(modalPreview)
+      console.log('hello')
       
-   })
+      
+   })*/
 
    return cardEl;
 }
+
+
+   
+   
+
 
 function renderCard(data) {
    const cardEl = createCard(data);
