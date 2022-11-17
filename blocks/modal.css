@@ -116,6 +116,7 @@
 .modal__image{
     max-width: 75vw;
     max-height: 75vh;
+    object-fit: cover;
 }
 
 
@@ -125,8 +126,15 @@
     font-size: 12px;
 }
 
+.modal__container-preview{
+    display: flex;
+    flex-direction: column;
+    
+}
+
 #modal-preview-close-button{
-    margin: 0;
+    align-self: flex-end;
+    margin-left: 50px
 }
 
 
@@ -151,4 +159,8 @@
         margin-bottom: 13px;
     }   
     
+    .modal__image{
+        max-width: 240px;
+        min-height: 299px;
+    }
 }
