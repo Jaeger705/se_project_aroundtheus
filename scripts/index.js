@@ -1,27 +1,27 @@
 const initialCards = [
    {
     name: 'Yosemite Valley',
-    link: './images/yosemite-valley.png'
+    link: './images/yosemite-valley.jpg'
    },
    {
     name: 'Lake Louise',
-    link: './images/lake-louise.png'
+    link: './images/lake-louise.jpg'
    },
    {
     name: 'Bald Mountains',
-    link: './images/bald-mountains.png'
+    link: './images/bald-mountains.jpg'
    },
    {
     name: 'Latemar',
-    link: './images/latemar.png'
+    link: './images/latemar.jpg'
    },
    {
     name: 'Vanoise National Park',
-    link: './images/vanoise-national-park.png'
+    link: './images/vanoise-national-park.jpg'
    },
    {
     name: 'Lago Di Braies',
-    link: './images/lago-di-braies.png'
+    link: './images/lago-di-braies.jpg'
    }
 ];
 
