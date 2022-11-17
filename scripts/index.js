@@ -35,7 +35,7 @@ const profileTitle = document.querySelector('.profile__title');
 const profileDescription = document.querySelector('.profile__description');
 const cardListEl = document.querySelector('.nature__list');
 const profileEditForm = document.querySelector('#edit-profile-form');
-const cardEdit = document.querySelector('.modal__card');
+const cardEdit = document.querySelector('#modal-card');
 const cardAddButton = document.querySelector('.profile__add-button')
 const cardCloseButton = document.querySelector('#add__close-button')
 const cardAddForm = document.querySelector('#add-form')
@@ -63,11 +63,12 @@ function closeCardModal() {
 
 
 cardAddButton.addEventListener('click', (evt) => {
-      openCardModal();
+      openModal(cardAddForm);
+      console.log('hello')
    })
 
 cardCloseButton.addEventListener('click', (evt) => {
-   closeCardModal()
+   closeModal(cardEdit);
 })
 
 const cardTemplate = document.querySelector('#card-template').content.firstElementChild;
@@ -104,7 +105,7 @@ cardAddForm.addEventListener('submit', (evt) => {
       name: title,
       link: link
    });
-   closeCardModal(cardAddForm);
+   closeModal(cardAddForm);
 });
 
 

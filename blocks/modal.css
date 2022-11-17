@@ -27,7 +27,7 @@
     transition: visibility 0s, opacity 0.5s linear;
 }
 
-.modal__card{
+#modal-card{
     background-color: rgba(0, 0, 0, 0.5);
     width: 100vw;
     height: 100vh;
@@ -47,14 +47,9 @@
     transition: visibility 0s 0.5s, opacity 0.5s linear;
 }
 
-.modal__card-open{
-    visibility: visible;
-    opacity: 1;
-    pointer-events: all;
-    transition: visibility 0s, opacity 0.5s linear;
-}
 
-.modal__preview{
+
+/*.modal__preview{
     background-color: rgba(0, 0, 0, 0.5);
     width: 100vw;
     height: 100vh;
@@ -79,7 +74,7 @@
     
     pointer-events: all;
     transition: visibility 0s, opacity 0.5s linear;
-}
+} */
 
 .modal__container{
     background-color: white;
