@@ -113,21 +113,20 @@
 }
 
 
-.modal__container-preview{
-
-    border-radius: 10px;
-}
 .modal__image{
-    width: 100%;
-    object-fit: cover;
-
-    border-radius: 0;
+    max-width: 75vw;
+    max-height: 75vh;
 }
+
 
 .modal__text{
     font-family: "Inter", "Arial", sans-serif;
     font-weight: 400;
     font-size: 12px;
+}
+
+#modal-preview-close-button{
+    margin: 0;
 }
 
 

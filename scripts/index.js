@@ -91,7 +91,7 @@ profileEditForm.addEventListener('submit', (event) => {
    profileTitle.textContent = titleValue;
    profileDescription.textContent = descriptionValue;
 
-   closeModal(profileEditForm);
+   closeModal(profileEdit);
 });
 
 cardAddForm.addEventListener('submit', (evt) => {
@@ -99,7 +99,7 @@ cardAddForm.addEventListener('submit', (evt) => {
    const title = evt.target.title.value;
    const link = evt.target.link.value;
 
-   
+
    renderCard({
       name: title,
       link: link
@@ -123,7 +123,7 @@ const modalPreview = document.querySelector('#modal-preview')
 
 const modalImage = document.querySelector('.modal__image')
 const imageTitle = document.querySelector('.modal__text')
-const imageCloseButton = modalPreview.querySelector('#preview-close-button')
+const imageCloseButton = modalPreview.querySelector('#modal-preview-close-button')
 
 
 function createCard(data) {
