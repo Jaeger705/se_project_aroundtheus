@@ -35,7 +35,7 @@ const profileTitle = document.querySelector('.profile__title');
 const profileDescription = document.querySelector('.profile__description');
 const cardListEl = document.querySelector('.nature__list');
 const profileEditForm = document.querySelector('#edit-profile-form');
-const cardEdit = document.querySelector('#modal-card');
+const cardAdd = document.querySelector('#modal-card');
 const cardAddButton = document.querySelector('.profile__add-button')
 const cardCloseButton = document.querySelector('#add__close-button')
 const cardAddForm = document.querySelector('#add-form')
@@ -53,22 +53,16 @@ function closeModal(modal) {
    modal.classList.remove('modal_opened');
 }
 
-function openCardModal() {
-   cardEdit.classList.add('modal__card-open');
-}
 
-function closeCardModal() {
-   cardEdit.classList.remove('modal__card-open')
-}
 
 
 cardAddButton.addEventListener('click', (evt) => {
-      openModal(cardAddForm);
-      console.log('hello')
+      openModal(cardAdd);
+      
    })
 
 cardCloseButton.addEventListener('click', (evt) => {
-   closeModal(cardEdit);
+   closeModal(cardAdd);
 })
 
 const cardTemplate = document.querySelector('#card-template').content.firstElementChild;
@@ -93,6 +87,7 @@ profileEditForm.addEventListener('submit', (event) => {
    profileDescription.textContent = descriptionValue;
 
    closeModal(profileEdit);
+   
 });
 
 cardAddForm.addEventListener('submit', (evt) => {
@@ -105,7 +100,7 @@ cardAddForm.addEventListener('submit', (evt) => {
       name: title,
       link: link
    });
-   closeModal(cardAddForm);
+   closeModal(cardAdd);
 });
 
 
