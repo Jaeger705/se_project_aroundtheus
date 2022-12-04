@@ -42,12 +42,24 @@ const cardAddButton = document.querySelector(".profile__add-button");
 const cardCloseButton = document.querySelector("#add__close-button");
 const cardAddForm = document.querySelector("#add-form");
 
+
+function closeModalEsc(evt) {
+  if (evt.key === 'Escape') {
+    const modalOpened = document.querySelector('.modal__opened')
+    closeModal(modalOpened)
+    
+  }
+}
+
+
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener('keydown', closeModalEsc)
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener('keydown', closeModalEsc)
 }
 
 cardAddButton.addEventListener("click", (evt) => {

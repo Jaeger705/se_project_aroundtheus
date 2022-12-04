@@ -49,6 +49,13 @@
     opacity: 80%;
 }
 
+.form__error{
+    color: #FF0000;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: "Inter", "Arial", sans-serif;
+}
+
 @media screen and (max-width:880px){
     .form{
         margin-left: 0;
