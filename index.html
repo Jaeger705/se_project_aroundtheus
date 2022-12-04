@@ -49,12 +49,10 @@
       <div class="modal__container">
         <h3 class="modal__title">Edit profile</h3>
         <form class="modal__form form" id="edit-profile-form">
-            <input class="form__input form__input-name" name="title" placeholder="Name" type="text" maxlength="40" minlength="2" required>
-            <div class="form__line"></div>
-            <span class="form__error"></span>
-            <input class="form__input form__input-description" name="description" placeholder="Description" type="text" required>
-            <div class="form__line"></div>
-            <span class="form__error"></span>
+            <input class="form__input form__input-name" id="owner-name" name="title" placeholder="Name" type="text" maxlength="40" minlength="2" required>
+            <span class="form__error" id="owner-name-error"></span>
+            <input class="form__input form__input-description" id="owner-description" name="description" placeholder="Description" type="text" maxlength="200" minlength="2" required>
+            <span class="form__error" id="owner-description-error"></span>
             <button class="form__button" type="submit">Save</button>
         </form>
 
@@ -66,10 +64,10 @@
       <div class="modal__container">
         <h3 class="modal__title">Newplace</h3>
         <form class="modal__form form" id="add-form">
-            <input class="form__input form__input-title" name="title" placeholder="Title" type="text" maxlength="30" minlength="1" required>
-            <div class="form__line"></div>
-            <input class="form__input form__input-link" name="link" placeholder="Image Link" type="text" required>
-            <div class="form__line"></div>
+            <input class="form__input form__input-title" id="image-title" name="title" placeholder="Title" type="text" maxlength="30" minlength="1" required>
+            <span class="form__error" id="image-title-error"></span>
+            <input class="form__input form__input-link" id="image-link" name="link" placeholder="Image Link" type="text" required>
+            <span class="form__error" id="image-link-error"></span>
             <button class="form__button" type="submit">Save</button>
         </form>
 

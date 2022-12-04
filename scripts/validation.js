@@ -1,13 +1,32 @@
 // enabling validation by calling enableValidation()
 // pass all the settings on call
 
+function showInputError(formEl, inputEl, options) {
+    const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`)
+    inputEl.classlist.add(options.inputErrorClass)
+    errorMessageEl.textContent = inputEl.validationMessage
+    errorMessageEl.classlist.add(options.errorClass)
+}
+
+function hideInputError(formEl, inputEl, options) {
+    inputEl.classlist.remove(options.inputErrorClass)
+}
+
+function checkInputValidity(formEl, inputEl, options) {
+    if (!inputEl.validity.valid) {
+        showInputError(formEl, inputEl, options)
+    }   else {
+        hideInputError(formEl, inputEl, options)
+    }
+}
+
 function setEventListeners(formEl, options) {
  
     const {inputSelector} = options
     const inputEls = [...formEl.querySelectorAll(inputSelector)]
     inputEls.forEach(inputEl => {
         inputEl.addEventListener('input', (evt) => {
-            console.log(inputEl.validity)
+            checkInputValidity(formEl, inputEl, options)
         })
     })
 }

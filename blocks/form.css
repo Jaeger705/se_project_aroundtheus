@@ -11,22 +11,39 @@
     border-style: none;
     font-family: "Inter", "Arial", sans-serif;
     font-weight: 400;
-    margin-bottom: 13px;
+    padding-bottom: 13px;
     font-size: 14px;
     line-height: 1.2;
 }
 
 .form__input::placeholder{
     color: #000000;
-}
-.form__line{
-    border-bottom: 1px solid #000000;
-    flex-grow: 1;
-    max-width: 358px;
-    opacity: 20%;
+    
 }
 
-.form__line:first-of-type{
+.form__input-name{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    
+}
+
+.form__input-description{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    
+}
+
+.form__input-title{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+   
+}
+
+.form__input-link{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+   
+}
+
+
+
+.form__input:first-of-type{
     margin-bottom: 29px;
 }
 

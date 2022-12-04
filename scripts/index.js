@@ -45,7 +45,7 @@ const cardAddForm = document.querySelector("#add-form");
 
 function closeModalEsc(evt) {
   if (evt.key === 'Escape') {
-    const modalOpened = document.querySelector('.modal__opened')
+   const modalOpened = document.querySelector('modal_opened')
     closeModal(modalOpened)
     
   }
@@ -59,6 +59,7 @@ function openModal(modal) {
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+ 
   document.removeEventListener('keydown', closeModalEsc)
 }
 
