@@ -43,10 +43,12 @@
 
 
 
-.form__input:first-of-type{
+/*.form__input:first-of-type{
     margin-bottom: 29px;
+}*/
+.form__input_type_error{
+    border-bottom: 1px solid #FF0000;
 }
-
 .form__button{
     width: 358px;
     height: 50px;
@@ -62,6 +64,11 @@
     line-height: 1.2;
     cursor: pointer;
 }
+
+.form__button_disabled{
+    background-color: white;
+    color: rgba(0, 0, 0, 0.2);
+}
 .form__button:hover{
     opacity: 80%;
 }
@@ -71,6 +78,10 @@
     font-size: 12px;
     font-weight: 400;
     font-family: "Inter", "Arial", sans-serif;
+    
+}
+.form__error:first-of-type{
+    padding-bottom: 29px;
 }
 
 @media screen and (max-width:880px){

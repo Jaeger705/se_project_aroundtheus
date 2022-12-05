@@ -45,9 +45,16 @@ const cardAddForm = document.querySelector("#add-form");
 
 function closeModalEsc(evt) {
   if (evt.key === 'Escape') {
-   const modalOpened = document.querySelector('modal_opened')
+   const modalOpened = document.querySelector('.modal_opened')
     closeModal(modalOpened)
     
+  }
+}
+
+function closeModalOutside(evt) {
+  if (evt.target.classList.contains("modal")) {
+    const modalOpened = document.querySelector('.modal_opened')
+    closeModal(modalOpened)
   }
 }
 
@@ -55,12 +62,13 @@ function closeModalEsc(evt) {
 function openModal(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener('keydown', closeModalEsc)
+  document.addEventListener('mousedown', closeModalOutside)
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
- 
   document.removeEventListener('keydown', closeModalEsc)
+  document.removeEventListener('mousedown', closeModalOutside)
 }
 
 cardAddButton.addEventListener("click", (evt) => {
