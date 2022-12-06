@@ -68,6 +68,8 @@
 .form__button_disabled{
     background-color: white;
     color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    cursor: default;
 }
 .form__button:hover{
     opacity: 80%;
@@ -78,6 +80,7 @@
     font-size: 12px;
     font-weight: 400;
     font-family: "Inter", "Arial", sans-serif;
+    line-height: 1.2;
     
 }
 .form__error:first-of-type{
