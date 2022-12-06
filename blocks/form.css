@@ -16,10 +16,10 @@
     line-height: 1.2;
 }
 
-.form__input::placeholder{
+/*.form__input::placeholder{
     color: #000000;
     
-}
+}*/
 
 .form__input-name{
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -70,6 +70,7 @@
     color: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(0, 0, 0, 0.2);
     cursor: default;
+    border-radius: 2px;
 }
 .form__button:hover{
     opacity: 80%;
@@ -81,10 +82,10 @@
     font-weight: 400;
     font-family: "Inter", "Arial", sans-serif;
     line-height: 1.2;
-    
+    height: 7px;
 }
 .form__error:first-of-type{
-    padding-bottom: 29px;
+    padding-bottom: 20px;
 }
 
 @media screen and (max-width:880px){
