@@ -113,10 +113,11 @@ cardAddForm.addEventListener("submit", (evt) => {
     name: title,
     link: link,
   });
-  //const inputEls = [...document.querySelectorAll('.form__input')]
   closeModal(cardAdd);
   cardAddForm.reset();
-  //toggleButtonState(inputEls, profileSaveButton, options)
+  const submitButton = cardAddForm.querySelector(config.submitButtonSelector)
+
+  disableSubmitButton(submitButton, config.inactiveButtonClass)
 });
 
 const handleLikeButton = (evt) => {

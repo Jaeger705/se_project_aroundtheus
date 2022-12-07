@@ -23,20 +23,36 @@ function checkInputValidity(formEl, inputEl, options) {
     }
 }
 
+function disableSubmitButton(submitButton, inactiveButtonClass) {
+    submitButton.classList.add(inactiveButtonClass)
+    submitButton.disabled = true
+
+}
+
+function enableSubmitButton(submitButton, inactiveButtonClass) {
+    submitButton.classList.remove(inactiveButtonClass)
+    submitButton.disabled = false
+
+}
+
+function hasInvalidInput(inputList) {
+    return !inputList.every((inputEl) => inputEl.validity.valid)
+}
+
 function toggleButtonState(inputEls, submitButton, options) {
-    let foundInvalid = false
+   /* let foundInvalid = false
     inputEls.forEach(inputEl => {
         if(!inputEl.validity.valid) {
             foundInvalid = true
         }
-    })
+    }) */
 
-    if(foundInvalid) {
-        submitButton.classList.add(options.inactiveButtonClass)
-        submitButton.disabled = true
-    } else {
-        submitButton.classList.remove(options.inactiveButtonClass)
-        submitButton.disabled = false
+    if (hasInvalidInput(inputEls)) {
+        disableSubmitButton(submitButton, options.inactiveButtonClass)
+    
+    }
+    else {
+        enableSubmitButton(submitButton, options.inactiveButtonClass)
     }
 }
 
