@@ -1,3 +1,5 @@
+import FormValidator from "./FormValidator.js";
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -170,4 +172,5 @@ function renderCard(data) {
   cardListEl.prepend(cardEl);
 }
 
-initialCards.reverse().forEach(renderCard);
+initialCards.reverse().forEach(renderCard); 
+

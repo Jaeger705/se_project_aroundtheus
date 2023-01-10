@@ -40,12 +40,7 @@ function hasInvalidInput(inputList) {
 }
 
 function toggleButtonState(inputEls, submitButton, options) {
-   /* let foundInvalid = false
-    inputEls.forEach(inputEl => {
-        if(!inputEl.validity.valid) {
-            foundInvalid = true
-        }
-    }) */
+
 
     if (hasInvalidInput(inputEls)) {
         disableSubmitButton(submitButton, options.inactiveButtonClass)
