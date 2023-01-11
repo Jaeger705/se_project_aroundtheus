@@ -117,9 +117,9 @@ cardAddForm.addEventListener("submit", (evt) => {
   });
   closeModal(cardAdd);
   cardAddForm.reset();
-  const submitButton = cardAddForm.querySelector(config.submitButtonSelector)
+  const submitButton = cardAddForm.querySelector(settings.submitButtonSelector)
 
-  disableSubmitButton(submitButton, config.inactiveButtonClass)
+  disableSubmitButton(submitButton, settings.inactiveButtonClass)
 });
 
 const handleLikeButton = (evt) => {
@@ -173,4 +173,18 @@ function renderCard(data) {
 }
 
 initialCards.reverse().forEach(renderCard); 
+
+const settings = {
+  formSelector: ".modal__form",
+  inputSelector: ".form__input",
+  submitButtonSelector: ".form__button",
+  inactiveButtonClass: "form__button_disabled",
+  inputErrorClass: "form__input_type_error",
+  errorClass: "form__error_visible"
+}
+
+const editFormValidator = new FormValidator(settings, profileEditForm);
+const addCardValidator = new FormValidator(settings, cardAddForm)
+editFormValidator.enableValidator();
+addCardValidator.enableValidator()
 
