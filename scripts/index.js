@@ -1,3 +1,4 @@
+import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
 
 const initialCards = [
@@ -118,8 +119,8 @@ cardAddForm.addEventListener("submit", (evt) => {
   closeModal(cardAdd);
   cardAddForm.reset();
   const submitButton = cardAddForm.querySelector(settings.submitButtonSelector)
-
-  disableSubmitButton(submitButton, settings.inactiveButtonClass)
+  const disableSubmitButton = cardAddForm.querySelector(settings.inactiveButtonClass)
+  //disableSubmitButton(submitButton, settings.inactiveButtonClass)
 });
 
 const handleLikeButton = (evt) => {
@@ -138,7 +139,6 @@ imageCloseButton.addEventListener("click", (evt) => {
  });
 
 function createCard(data) {
-  console.log(data);
   const cardEl = cardTemplate.cloneNode(true);
   const imageEl = cardEl.querySelector(".nature__image");
   const cardTitle = cardEl.querySelector(".nature__title");
