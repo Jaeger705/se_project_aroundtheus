@@ -59,8 +59,7 @@ cardCloseButton.addEventListener("click", (evt) => {
   closeModal(cardAdd);
 });
 
-const cardSelector =
-  document.querySelector("#card-template").content.firstElementChild;
+const cardSelector = '#card-template'
 
 editButton.addEventListener("click", (evt) => {
   profileNameInput.value = profileTitle.textContent;
@@ -106,8 +105,6 @@ const handleLikeButton = (evt) => {
 
 const modalPreview = document.querySelector("#modal-preview");
 
-const modalImage = document.querySelector(".modal__image");
-const imageTitle = document.querySelector(".modal__text");
 const imageCloseButton = modalPreview.querySelector(
   "#modal-preview-close-button"
 );
@@ -115,45 +112,16 @@ imageCloseButton.addEventListener("click", (evt) => {
    closeModal(modalPreview);
  });
 
-function createCard() {
-  const makeCard = {
-    name: cardTitleInput.value,
-    link: cardLinkInput.value
-  }
-
-  const card = new Card(makeCard, cardSelector)
-  return card
-  /*const cardEl = cardTemplate.cloneNode(true);
-  const imageEl = cardEl.querySelector(".nature__image");
-  const cardTitle = cardEl.querySelector(".nature__title");
+function createCard(data) {
  
 
-  imageEl.src = data.link;
-  imageEl.alt = data.name;
-  cardTitle.textContent = data.name;
-
-  const cardDeleteButton = cardEl.querySelector(".nature__delete-button");
-
-  cardDeleteButton.addEventListener("click", (evt) => {
-    cardEl.remove();
-  });
-
-  const cardLikeButton = cardEl.querySelector(".nature__like-button");
-  cardLikeButton.addEventListener("click", handleLikeButton);
-
-  imageEl.addEventListener("click", (evt) => {
-    modalImage.src = data.link;
-    modalImage.alt = "Image of " + data.name;
-    imageTitle.textContent = data.name;
-    openModal(modalPreview);
-  });
-
-
-  return cardEl;*/
+  const card = new Card(data, cardSelector)
+  return card.getView()
+ 
 }
 
-function renderCard() {
-  const cardEl = createCard();
+function renderCard(data) {
+  const cardEl = createCard(data);
   cardListEl.prepend(cardEl);
 }
 
