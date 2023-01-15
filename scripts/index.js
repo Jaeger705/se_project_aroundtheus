@@ -1,5 +1,6 @@
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
+import { closeModal, openModal } from "./utils.js";
 
 const initialCards = [
   {
@@ -44,35 +45,11 @@ const cardAdd = document.querySelector("#modal-card");
 const cardAddButton = document.querySelector(".profile__add-button");
 const cardCloseButton = document.querySelector("#add__close-button");
 const cardAddForm = document.querySelector("#add-form");
+const cardTitleInput = document.querySelector('#image-title')
+const cardLinkInput = document.querySelector('#image-link')
 
 
-function closeModalEsc(evt) {
-  if (evt.key === 'Escape') {
-   const modalOpened = document.querySelector('.modal_opened')
-    closeModal(modalOpened)
-    
-  }
-}
 
-function closeModalOutside(evt) {
-  if (evt.target.classList.contains("modal")) {
-    const modalOpened = document.querySelector('.modal_opened')
-    closeModal(modalOpened)
-  }
-}
-
-
-function openModal(modal) {
-  modal.classList.add("modal_opened");
-  document.addEventListener('keydown', closeModalEsc)
-  document.addEventListener('mousedown', closeModalOutside)
-}
-
-function closeModal(modal) {
-  modal.classList.remove("modal_opened");
-  document.removeEventListener('keydown', closeModalEsc)
-  document.removeEventListener('mousedown', closeModalOutside)
-}
 
 cardAddButton.addEventListener("click", (evt) => {
   openModal(cardAdd);
@@ -82,7 +59,7 @@ cardCloseButton.addEventListener("click", (evt) => {
   closeModal(cardAdd);
 });
 
-const cardTemplate =
+const cardSelector =
   document.querySelector("#card-template").content.firstElementChild;
 
 editButton.addEventListener("click", (evt) => {
@@ -138,10 +115,18 @@ imageCloseButton.addEventListener("click", (evt) => {
    closeModal(modalPreview);
  });
 
-function createCard(data) {
-  const cardEl = cardTemplate.cloneNode(true);
+function createCard() {
+  const makeCard = {
+    name: cardTitleInput.value,
+    link: cardLinkInput.value
+  }
+
+  const card = new Card(makeCard, cardSelector)
+  return card
+  /*const cardEl = cardTemplate.cloneNode(true);
   const imageEl = cardEl.querySelector(".nature__image");
   const cardTitle = cardEl.querySelector(".nature__title");
+ 
 
   imageEl.src = data.link;
   imageEl.alt = data.name;
@@ -164,11 +149,11 @@ function createCard(data) {
   });
 
 
-  return cardEl;
+  return cardEl;*/
 }
 
-function renderCard(data) {
-  const cardEl = createCard(data);
+function renderCard() {
+  const cardEl = createCard();
   cardListEl.prepend(cardEl);
 }
 

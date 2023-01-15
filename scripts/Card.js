@@ -1,43 +1,4 @@
-
-const modalPreview = document.querySelector("#modal-preview");
-
-const modalImage = document.querySelector(".modal__image");
-const imageTitle = document.querySelector(".modal__text");
-const imageCloseButton = modalPreview.querySelector(
-  "#modal-preview-close-button"
-);
-imageCloseButton.addEventListener("click", (evt) => {
-   closeModal(modalPreview);
- });
-
-function closeModalEsc(evt) {
-    if (evt.key === 'Escape') {
-     const modalOpened = document.querySelector('.modal_opened')
-      closeModal(modalOpened)
-      
-    }
-  }
-  
-  function closeModalOutside(evt) {
-    if (evt.target.classList.contains("modal")) {
-      const modalOpened = document.querySelector('.modal_opened')
-      closeModal(modalOpened)
-    }
-  }
-  
-  
-  function openModal(modal) {
-    modal.classList.add("modal_opened");
-    document.addEventListener('keydown', closeModalEsc)
-    document.addEventListener('mousedown', closeModalOutside)
-  }
-  
-  function closeModal(modal) {
-    modal.classList.remove("modal_opened");
-    document.removeEventListener('keydown', closeModalEsc)
-    document.removeEventListener('mousedown', closeModalOutside)
-  }
-  
+import { openModal } from "./utils.js"
 
 
 class Card {
@@ -50,21 +11,26 @@ class Card {
 
 
     _setEventListeners() {
-
+        this._element.querySelector('.nature__like-button').addEventListener('click', () => this._handleLikeButton())
+        this._element.querySelector('.nature__delete-button').addEventListener('click', () => this._handleDeleteButton())
+        this._element.querySelector('.nature__image').addEventListener('click', () => this._handleImagePreview())
     }
 
     _handleLikeButton() {
-        evt.target.classList.toggle("nature__like-button_active");
+        this._element.querySelector('.nature__like-button').classList.toggle("nature__like-button_active");
     }
 
     _handleDeleteButton() {
-        cardEl.remove();
+        this._element.querySelector('.nature__delete-button').closest('.nature__card').remove();
     }
 
     _handleImagePreview() {
-        modalImage.src = data.link;
-        modalImage.alt = "Image of " + data.name;
-        imageTitle.textContent = data.name;
+        const modalPreview = document.querySelector("#modal-preview")
+        const modalImage = document.querySelector(".modal__image");
+        const imageTitle = document.querySelector(".modal__text");
+        modalImage.src = this._link;
+        modalImage.alt = "Image of " + this._name;
+        imageTitle.textContent = this._name;
         openModal(modalPreview);
     }
     _getTemplate() {
@@ -75,6 +41,10 @@ class Card {
     getView() {
         this._element = this._getTemplate()
         this._setEventListeners()
+        this._element.querySelector('.nature__image').src = this._link
+        this._element.querySelector('.nature__title').textContent = this._name
+        this._element.querySelector('.nature__image').alt = this._name
+        return this._element
     }
 }
 
