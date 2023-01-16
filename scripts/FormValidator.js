@@ -25,7 +25,7 @@ class FormValidator {
         errorMessageEl.classList.remove(this._errorClass)
     }
 
-   _toggleButtonState() {
+   toggleButtonState() {
 
 
         if (this._hasInvalidInput(this._inputEls)) {
@@ -58,7 +58,7 @@ class FormValidator {
         this._inputEls.forEach(inputEl => {
             inputEl.addEventListener('input', (evt) => {
                 this._checkInputValidity(inputEl)
-                this._toggleButtonState()
+                this.toggleButtonState()
             })
         })
     }
@@ -68,6 +68,7 @@ class FormValidator {
         evt.preventDefault();
     });
       this._setEventListeners();
+      this.toggleButtonState();
     }
 
      

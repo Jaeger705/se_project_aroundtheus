@@ -21,7 +21,7 @@ class Card {
     }
 
     _handleDeleteButton() {
-        this._element.querySelector('.nature__delete-button').closest('.nature__card').remove();
+        this._element.remove();
     }
 
     _handleImagePreview() {

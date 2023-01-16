@@ -29,14 +29,16 @@ const initialCards = [
   },
 ];
 
+
+
 const editButton = document.querySelector(".profile__edit-button");
 const profileEdit = document.querySelector("#modal-profile");
-const closeProfileModalButton = document.querySelector(".modal__close-button");
-const profileNameInput = document.querySelector(".form__input-name");
-const profileDescriptionInput = document.querySelector(
+const closeProfileModalButton = profileEdit.querySelector(".modal__close-button");
+const profileNameInput = profileEdit.querySelector(".form__input-name");
+const profileDescriptionInput = profileEdit.querySelector(
   ".form__input-description"
 );
-const profileSaveButton = document.querySelector(".form__button");
+//const profileSaveButton = profileEdit.querySelector(".form__button");
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 const cardListEl = document.querySelector(".nature__list");
@@ -45,8 +47,6 @@ const cardAdd = document.querySelector("#modal-card");
 const cardAddButton = document.querySelector(".profile__add-button");
 const cardCloseButton = document.querySelector("#add__close-button");
 const cardAddForm = document.querySelector("#add-form");
-const cardTitleInput = document.querySelector('#image-title')
-const cardLinkInput = document.querySelector('#image-link')
 
 
 
@@ -94,14 +94,10 @@ cardAddForm.addEventListener("submit", (evt) => {
   });
   closeModal(cardAdd);
   cardAddForm.reset();
-  const submitButton = cardAddForm.querySelector(settings.submitButtonSelector)
-  const disableSubmitButton = cardAddForm.querySelector(settings.inactiveButtonClass)
-  //disableSubmitButton(submitButton, settings.inactiveButtonClass)
+
+  addCardValidator.toggleButtonState()
 });
 
-const handleLikeButton = (evt) => {
-  evt.target.classList.toggle("nature__like-button_active");
-};
 
 const modalPreview = document.querySelector("#modal-preview");
 
